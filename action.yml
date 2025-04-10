@@ -15,6 +15,7 @@ runs:
   steps:
     - if: ${{ inputs.orbit-version }} == null
       name: Clone repository to determine build version
+      shell: bash
       run: |
         git clone https://github.com/chaseruskin/orbit
         cd orbit

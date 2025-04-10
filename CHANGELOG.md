@@ -1,5 +1,11 @@
 # Changelog
 
+
+## v0.2.0
+
+### Fixes
+- Uses descriptive build tag when compiling Orbit from an untagged version
+
 ## v0.1.3
 
 ### Changes

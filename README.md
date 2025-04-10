@@ -20,7 +20,7 @@ If you want a specific version of `orbit`, you can specify this by passing the
 ```yaml
 - uses: chaseruskin/setup-orbit@v0
   with:
-    orbit-version: '0.12.0'
+    orbit-version: '0.24.0'
 ```
 
 ### Inputs

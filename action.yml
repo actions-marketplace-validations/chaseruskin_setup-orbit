@@ -14,7 +14,7 @@ runs:
   using: "composite"
   steps:
     - if: ${{ inputs.orbit-version }} == null
-    - name: Clone repository to determine build version
+      name: Clone repository to determine build version
       run: |
         git clone https://github.com/chaseruskin/orbit
         cd orbit
@@ -25,7 +25,7 @@ runs:
     - if: ${{ inputs.orbit-version }} == null
       name: Install orbit from remote repository using latest version
       env:
-        GIT_DESC_VERSION: ${{ vars.GIT_DESC_VERSION }}
+        GIT_DESC_VERSION: ${{ env.GIT_DESC_VERSION }}
       uses: baptiste0928/cargo-install@v3
       with:
         crate: orbit

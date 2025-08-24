@@ -1,19 +1,19 @@
-name: "Setup orbit"
+name: "Setup Orbit"
 author: "Chase Ruskin"
 branding:
   icon: 'play'
   color: 'blue'
-description: Install orbit, an agile package manager and extensible build tool for hdls
+description: Install Orbit, a package manager and build system for VHDL, Verilog, and SystemVerilog
 inputs:
-  orbit-version:
-    description: 'A valid semver specifier of the orbit version to install'
+  version:
+    description: 'A valid semver specifier of the Orbit version to install'
     required: false
     default: null
     
 runs:
   using: "composite"
   steps:
-    - if: ${{ inputs.orbit-version }} == null
+    - if: ${{ inputs.version }} == null
       name: Clone repository to determine build version
       shell: bash
       run: |
@@ -23,7 +23,7 @@ runs:
         cd ..
         rm -rf orbit
 
-    - if: ${{ inputs.orbit-version }} == null
+    - if: ${{ inputs.version }} == null
       name: Install orbit from remote repository using latest version
       env:
         GIT_DESC_VERSION: ${{ env.GIT_DESC_VERSION }}
@@ -32,10 +32,10 @@ runs:
         crate: orbit
         git: https://github.com/chaseruskin/orbit
 
-    - if: ${{ inputs.orbit-version }} != null
+    - if: ${{ inputs.version }} != null
       name: Install orbit from remote repository using particular version
       uses: baptiste0928/cargo-install@v3
       with:
         crate: orbit
         git: https://github.com/chaseruskin/orbit
-        tag: ${{ inputs.orbit-version }}
+        tag: ${{ inputs.version }}

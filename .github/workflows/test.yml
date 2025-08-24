@@ -40,7 +40,7 @@ jobs:
       - name: Setup orbit
         uses: chaseruskin/setup-orbit@dev
         with:
-          orbit-version: 0.24.0
+          version: 0.26.0
 
       - name: Check orbit version
         run: orbit --version

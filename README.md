@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/chaseruskin/setup-orbit/actions/workflows/test.yml/badge.svg?branch=trunk)](https://github.com/chaseruskin/setup-orbit/actions/workflows/test.yml)
 
-This GitHub Action will install a release of [Orbit](https://github.com/chaseruskin/orbit), an agile package manager and extensible build tool for hardware description languages (HDLs).
+This GitHub Action will install a release of [Orbit](https://github.com/chaseruskin/orbit), a package manager and build system for VHDL, Verilog, and SystemVerilog.
 
 ## Usage
 
@@ -14,19 +14,19 @@ In most cases all you will need is the following in your workflow.
 - uses: chaseruskin/setup-orbit@v0
 ```
 
-If you want a specific version of `orbit`, you can specify this by passing the
-`orbit-version` input.
+If you want a specific version of Orbit, you can specify this by passing the
+`version` input.
 
 ```yaml
 - uses: chaseruskin/setup-orbit@v0
   with:
-    orbit-version: '0.24.0'
+    version: '0.26.0'
 ```
 
 ### Inputs
 
 | Name           | Required | Description                                  | Type   | Default               |
 | -------------- | -------- | -------------------------------------------- | ------ | --------------------- |
-| `orbit-version`| no       | A valid semver specification.                | string | null                  |
+| `version`| no       | A valid semver specifier of the Orbit version to install                | string | null                  |
 
-By default, the latest version of `orbit` will be installed.
+By default, the latest released version of Orbit will be installed.

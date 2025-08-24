@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.0
+
+### Changes
+- Updates action's description
+- Changes `orbit-version` input to `version`
 
 ## v0.2.0
 

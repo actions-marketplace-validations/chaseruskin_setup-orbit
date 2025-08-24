@@ -66,7 +66,7 @@ jobs:
         uses: chaseruskin/setup-orbit@dev
         with:
           # use any version here just to test that @dev works properly
-          orbit-version: 0.24.0
+          version: 0.26.0
 
       - name: Test orbit
         run: orbit --version
